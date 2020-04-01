@@ -72,19 +72,20 @@ class Step1ViewController: UIViewController {
       .observeOn(MainScheduler.instance)
       .subscribe { (result) in
         switch result {
-        case let .next(image):
+        case let .next(image): // 완료했을때
           print("next")
           self.imageView.image = image
           
         case let .error(err):
           print(err.localizedDescription)
           
-        case .completed:
+        case .completed: // 항상 호출
           print("completed")
         }
     }.disposed(by: disposeBag)
   }
   
+  // 이미지 주소를 받아 Observable 을 반환
   func rxswiftLoadImage(from imageUrl: String) -> Observable<UIImage?> {
     return Observable.create { (seal) -> Disposable in
       asyncLoadImage(from: imageUrl) { (image) in
@@ -99,7 +100,9 @@ class Step1ViewController: UIViewController {
     view.backgroundColor = colors.randomElement()
   }
   
+  
   @objc private func imageCancelButtonAction() {
+    // DisposeBag 에 등록된 Observable 들을 취소
     disposeBag = DisposeBag()
   }
 }
