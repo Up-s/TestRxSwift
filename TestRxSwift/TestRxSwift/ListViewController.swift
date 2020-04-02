@@ -10,7 +10,7 @@ import UIKit
 
 class ListViewController: UITableViewController {
   
-  private let viewControllers = [Step1ViewController()]
+  private let viewControllers = [Step1ViewController(), Step2ViewController()]
   
   override func viewDidLoad() {
     super.viewDidLoad()

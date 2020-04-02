@@ -7,24 +7,40 @@
 //
 
 import UIKit
+import RxSwift
 
-class Step2ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+class Step2ViewController: UITableViewController {
+  
+  override var description: String { "Step2ViewController" }
+  
+  private var disposeBag = DisposeBag()
+  
+  private let cellList = ["exJust1", "exJust2", "exFrom1", "exMap1", "exMap2", "exFilter", "exMap3"]
+  
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    cellList.count
+  }
+  
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = UITableViewCell()
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    cell.textLabel?.text = cellList[indexPath.row]
+    
+    return cell
+  }
+  
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    switch indexPath.row {
+    case 0:
+      Observable
+        .just("Hello world")
+        .subscribe { (str) in
+          print(str)
+      }
+      .disposed(by: disposeBag)
+      
+    default:
+      break
     }
-    */
-
+  }
 }

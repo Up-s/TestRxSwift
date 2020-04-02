@@ -11,7 +11,7 @@ import RxSwift
 
 class Step1ViewController: UIViewController {
   
-  override var description: String { return "Step1ViewController" }
+  override var description: String { "Step1ViewController" }
   
   private var disposeBag = DisposeBag()
   private let colors = [UIColor.systemRed, .systemBlue, .systemFill, .systemPink, .systemTeal]
@@ -99,7 +99,6 @@ class Step1ViewController: UIViewController {
   @objc private func colorButtonAction() {
     view.backgroundColor = colors.randomElement()
   }
-  
   
   @objc private func imageCancelButtonAction() {
     // DisposeBag 에 등록된 Observable 들을 취소
