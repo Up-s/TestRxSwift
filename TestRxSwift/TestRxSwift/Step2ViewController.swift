@@ -39,6 +39,14 @@ class Step2ViewController: UITableViewController {
       }
       .disposed(by: disposeBag)
       
+    case 1:
+      Observable
+        .from([1, 2, 3])
+        .subscribe { num in
+         print(num)
+      }
+      .disposed(by: disposeBag)
+      
     default:
       break
     }
