@@ -15,6 +15,7 @@ class CalculatorViewController: UIViewController {
   private let secondTextField = UITextField()
   private let sumLabel = UILabel()
   
+  private var disposeBag = DisposeBag()
   private var first: Int?
   private var second: Int?
   
@@ -49,6 +50,7 @@ class CalculatorViewController: UIViewController {
         
       self?.sumLabel.text = String(sum)
     })
+    .disposed(by: disposeBag)
   }
   
   private func setUI() {
