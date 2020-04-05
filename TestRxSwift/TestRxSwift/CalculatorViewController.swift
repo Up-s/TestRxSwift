@@ -39,10 +39,12 @@ class CalculatorViewController: UIViewController {
   }
   
   private func updateNumber() {
-    let firstOb = Observable.just(first)
-    let secondOb = Observable.just(second)
+    let combine = Observable
+      .combineLatest([
+        Observable.just(first),
+        Observable.just(second)
+      ])
     
-    let combine = Observable.combineLatest([firstOb, secondOb])
     combine.subscribe(onNext: { [weak self] in
       let sum = $0
         .compactMap { $0 }
