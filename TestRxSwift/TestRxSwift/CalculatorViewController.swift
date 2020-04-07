@@ -11,6 +11,8 @@ import RxSwift
 
 class CalculatorViewController: UIViewController {
   
+  override var description: String { "CalculatorViewController" }
+  
   private let firstTextField = UITextField()
   private let secondTextField = UITextField()
   private let sumLabel = UILabel()
@@ -35,10 +37,11 @@ class CalculatorViewController: UIViewController {
       (first = Int(text)) :
       (second = Int(text))
     
-    updateNumber()
+//    updateNumber1()
+    updateNumber2()
   }
   
-  private func updateNumber() {
+  private func updateNumber1() {
     let combine = Observable
       .combineLatest([
         Observable.just(first),
@@ -46,6 +49,20 @@ class CalculatorViewController: UIViewController {
       ])
     
     combine.subscribe(onNext: { [weak self] in
+      let sum = $0
+        .compactMap { $0 }
+        .reduce(0) { $0 + $1 }
+        
+      self?.sumLabel.text = String(sum)
+    })
+    .disposed(by: disposeBag)
+  }
+  
+  private func updateNumber2() {
+    let observable = Observable
+      .just([first, second])
+
+    observable.subscribe(onNext: { [weak self] in
       let sum = $0
         .compactMap { $0 }
         .reduce(0) { $0 + $1 }

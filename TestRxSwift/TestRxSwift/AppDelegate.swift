@@ -17,8 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     window = UIWindow(frame: UIScreen.main.bounds)
     
-//    window?.rootViewController = UINavigationController(rootViewController: ListViewController())
-    window?.rootViewController = CalculatorViewController()
+    window?.rootViewController = UINavigationController(rootViewController: ListViewController())
     window?.makeKeyAndVisible()
     
     return true

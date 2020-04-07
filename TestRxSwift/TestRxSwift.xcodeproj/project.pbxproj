@@ -15,6 +15,7 @@
 		4F7025AE24344D2600106BD3 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7025AD24344D2600106BD3 /* ListViewController.swift */; };
 		4F7025B02434682900106BD3 /* Step2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7025AF2434682900106BD3 /* Step2ViewController.swift */; };
 		4FAADCBB2437657100132996 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAADCBA2437657100132996 /* CalculatorViewController.swift */; };
+		4FBC11BD243B3292003D7453 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBC11BC243B3292003D7453 /* ImageViewController.swift */; };
 		CF6E9E05FAF63B55CDC7C724 /* Pods_TestRxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 806EA25338785BCBB07B9C0B /* Pods_TestRxSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		4F7025AD24344D2600106BD3 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		4F7025AF2434682900106BD3 /* Step2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step2ViewController.swift; sourceTree = "<group>"; };
 		4FAADCBA2437657100132996 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		4FBC11BC243B3292003D7453 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		806EA25338785BCBB07B9C0B /* Pods_TestRxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestRxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D30BE06A97AF6E349865900E /* Pods-TestRxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestRxSwift.release.xcconfig"; path = "Target Support Files/Pods-TestRxSwift/Pods-TestRxSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +83,7 @@
 				4F7025AD24344D2600106BD3 /* ListViewController.swift */,
 				4F7025A924344CAC00106BD3 /* Step1ViewController.swift */,
 				4F7025AF2434682900106BD3 /* Step2ViewController.swift */,
+				4FBC11BC243B3292003D7453 /* ImageViewController.swift */,
 				4F31787F243441FC000DFBA6 /* Assets.xcassets */,
 				4F317881243441FC000DFBA6 /* LaunchScreen.storyboard */,
 				4F317884243441FC000DFBA6 /* Info.plist */,
@@ -214,6 +217,7 @@
 				4F7025AA24344CAC00106BD3 /* Step1ViewController.swift in Sources */,
 				4F7025B02434682900106BD3 /* Step2ViewController.swift in Sources */,
 				4F7025A824344C7300106BD3 /* Common.swift in Sources */,
+				4FBC11BD243B3292003D7453 /* ImageViewController.swift in Sources */,
 				4F7025AE24344D2600106BD3 /* ListViewController.swift in Sources */,
 				4FAADCBB2437657100132996 /* CalculatorViewController.swift in Sources */,
 				4F317877243441FB000DFBA6 /* AppDelegate.swift in Sources */,

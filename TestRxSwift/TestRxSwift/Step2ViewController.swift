@@ -41,11 +41,65 @@ class Step2ViewController: UITableViewController {
       
     case 1:
       Observable
+        .just(["Hello", "world"])
+        .subscribe { (arr) in
+          print(arr)
+      }.disposed(by: disposeBag)
+      
+    case 2:
+      Observable
         .from([1, 2, 3])
         .subscribe { num in
-         print(num)
+          print(num)
       }
       .disposed(by: disposeBag)
+      
+    case 3:
+      Observable
+        .just("Hello")
+        .map { str in "\(str) RxSwift" }
+        .subscribe { (str) in
+          print(str)
+      }
+      .disposed(by: disposeBag)
+      
+    case 4:
+      Observable
+        .from(["dldbdjq", "이유업"])
+        .map { $0.count }
+        .subscribe { (str) in
+          print(str)
+      }
+      .disposed(by: disposeBag)
+      
+    case 5:
+      Observable
+        .from([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+        .filter { $0 % 2 == 0 }
+        .subscribe { (n) in
+          print(n)
+      }
+      .disposed(by: disposeBag)
+      
+    case 6:
+      Observable
+        .just("800x600")
+        .map { $0.replacingOccurrences(of: "x", with: "/") }
+        .map { "https://picsum.photos/\($0)/?random" }
+        .map { URL(string: $0) }
+        .filter { $0 != nil }
+        .map { $0! }
+        .map { try Data(contentsOf: $0) }
+        .map { UIImage(data: $0) }
+        .subscribe(onNext: { [weak self] (image) in
+          guard let self = self else { return }
+          
+          let vcImage = ImageViewController()
+          vcImage.imageView.image = image
+          
+          self.present(vcImage, animated: true)
+        })
+        .disposed(by: disposeBag)
       
     default:
       break
